@@ -1,0 +1,11 @@
+@use './variables' as *;
+
+@mixin transition-basic{
+    transition: all 0.3s linear;
+}
+
+@mixin text-gradient($color: 'orange'){
+    background: $gradient-orange;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

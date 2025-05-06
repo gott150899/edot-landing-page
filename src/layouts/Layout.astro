@@ -1,3 +1,8 @@
+---
+import { ClientRouter } from "astro:transitions";
+import '../assets/styles/global.scss';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,6 +11,10 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<ClientRouter />
 	</head>
 	<body>
 		<slot />

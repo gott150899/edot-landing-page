@@ -1,0 +1,17 @@
+body{
+    font-family: $font-family;
+}
+
+.container{
+    max-width: 1172px;
+    margin: 0 auto;
+    padding: 0 $spacing-base;
+}
+
+a{
+    text-decoration: none;
+}
+span{
+    font-size: $font-size-base;
+    color: $black;
+}
