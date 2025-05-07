@@ -6,14 +6,19 @@ $font-size-base: 16px;
 
 // COLOR
 $orange: #ff6e26;
+$orange-100: #fc7735;
 
 $black: #0a0a0a;
+$black-100: #373737;
+$black-200: #595959;
 
 // BACKGROUND
 $gradient-orange: -webkit-linear-gradient(90deg, #ff732d, #ff6619 21%, #ff6619 51%, rgba(255, 115, 45, .5));;
+$gradient-blue: -webkit-linear-gradient(90deg, #0775ef, #0007ed 21%, #0007ed 51%, rgba(7, 117, 239, .5));
 
 // BOX SHADOW
 $box-shadow-basic: 0 2px 10px #ccc;
+$box-shadow-product: -1px 2px 7px -1px rgba(0, 0, 0, .25);
 
 // SPACING
 $spacing-base: 16px;

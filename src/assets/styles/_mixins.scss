@@ -5,7 +5,18 @@
 }
 
 @mixin text-gradient($color: 'orange'){
-    background: $gradient-orange;
+    @if($color == 'blue'){
+        background: $gradient-blue;
+    }@else{
+        background: $gradient-orange;
+    }
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@mixin line-clamp($line-number){
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line-number;
 }

@@ -1,0 +1,39 @@
+.tbs{
+    &__container{
+        &--align{
+            &-left{
+                text-align: left;
+            }
+            &-center{
+                text-align: center;
+            }
+            &-right{
+                text-align: right;
+            }
+        }
+    }
+    &__title{
+        &--base{
+            font-weight: bold;
+        }
+        &--size{
+            &-s{
+
+            }
+            &-m{
+                font-size: 40px;
+            }
+            &-l{
+                font-size: 55px;
+            }
+        }
+        &--color{
+            &-orange{
+                @include text-gradient('orange');
+            }
+            &-blue{
+                @include text-gradient('blue');
+            }
+        }
+    }
+}

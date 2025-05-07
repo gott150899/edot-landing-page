@@ -1,0 +1,61 @@
+.hpd{
+    &__container{
+        margin-bottom: 56px;
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 32px;
+    }
+    &__desc{
+        &--wrapper{
+            max-width: 552px;
+            text-align: center;
+        }
+    }
+    &__product{
+        &--grid{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            > *:only-child {
+                grid-column: 2 / 3; // đặt phần tử con duy nhất vào cột giữa
+            }
+        }
+        &--item{
+            display: flex;
+            flex-direction: column;
+            box-shadow: $box-shadow-product;
+            border-radius: 12px;
+        }
+        &--image{
+            height: 215px;
+        }
+    }
+    &__content{
+        &--wrapper{
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+        }
+        &--title{
+            font-size: 20px;
+            font-weight: bold;
+            color: $black-100;
+            line-height: 1.5;
+        }
+        &--teckstack{
+            font-size: 14px;
+            line-height: 1.5;
+            color: $orange-100;
+            @include line-clamp(2);
+        }
+        &--desc{
+            color: $black-200;
+            font-size: 16px;
+            line-height: 1.5;
+            @include line-clamp(3);
+        }
+    }
+}

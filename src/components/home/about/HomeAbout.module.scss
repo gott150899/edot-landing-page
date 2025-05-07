@@ -1,0 +1,17 @@
+.hab{
+    &__container{
+        margin-bottom: 112px;
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        row-gap: 56px;
+    }
+    &__text{
+        &--wrapper{
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+        }
+    }
+}
