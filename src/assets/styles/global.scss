@@ -1,11 +1,27 @@
 body{
     font-family: $font-family;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 .container{
-    max-width: 1172px;
     margin: 0 auto;
     padding: 0 $spacing-base;
+    height: 100%;
+    max-width: $xs-max-width;
+    @include responsive-sm{
+        max-width: $sm-max-width;
+    }
+    @include responsive-md{
+        max-width: $md-max-width;
+    }
+    @include responsive-lg{
+        max-width: $lg-max-width;
+    }
+    @include responsive-xl{
+        max-width: $xl-max-width;
+    }
 }
 
 a{
@@ -14,4 +30,30 @@ a{
 span{
     font-size: $font-size-base;
     color: $black;
+}
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.only-show-desktop{
+    @include responsive-between(0, $mdpb){
+        display: none !important;
+    }
+}
+.only-show-mobile{
+    @include responsive-md{
+        display: none !important;
+    }
 }

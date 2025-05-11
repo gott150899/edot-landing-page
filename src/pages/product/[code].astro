@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductContent from '../../components/product/product-content/ProductContent.tsx';
+import ProductOther from '../../components/product/product-other/ProductOther.tsx';
+import CONSTANT from '../../utils/constant.ts';
+
+export function getStaticPaths() {
+  return CONSTANT.PRODUCTS.map(x => ({ params: {code: x.code}, props: { title: x.seoTitle, description: x.seoDescription } }));
+}
+const { code } = Astro.params;
+const { title, description } = Astro.props;
+---
+
+<Layout title={title} description={description} pageRender='product' >
+  <ProductContent code={code} />
+  <ProductOther />
+</Layout>

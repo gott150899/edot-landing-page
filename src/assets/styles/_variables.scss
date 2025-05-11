@@ -7,10 +7,16 @@ $font-size-base: 16px;
 // COLOR
 $orange: #ff6e26;
 $orange-100: #fc7735;
+$orange-200: #fff6f1;
 
 $black: #0a0a0a;
 $black-100: #373737;
 $black-200: #595959;
+$black-300: #838383;
+
+$blue: #002a9c;
+$blue-100: #001b66;
+$blue-200: #edf7ff;
 
 // BACKGROUND
 $gradient-orange: -webkit-linear-gradient(90deg, #ff732d, #ff6619 21%, #ff6619 51%, rgba(255, 115, 45, .5));;
@@ -25,3 +31,23 @@ $spacing-base: 16px;
 
 // HEADER
 $header-height: 70px;
+
+// BREAKPOINTS
+$xs: 480px;
+$xspb: $xs - 1;
+$sm: 576px;
+$smpb: $sm - 1;
+$md: 768px;
+$mdpb: $md - 1;
+$lg: 992px;
+$lgpb: $lg - 1;
+$xl: 1200px;
+$xlpb: $xl - 1;
+
+$xs-max-width: 480px;
+$sm-max-width: 550px;
+$md-max-width: 750px;
+$lg-max-width: 980px;
+$xl-max-width: 1172px;
+// HOME VARIABLES
+$spacing-component-desktop: 112px;

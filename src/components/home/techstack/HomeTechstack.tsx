@@ -11,6 +11,8 @@ import { DiNodejs } from "react-icons/di";
 import { DiMysql } from "react-icons/di";
 import { FaReact } from "react-icons/fa";
 import { SiAntdesign } from "react-icons/si";
+import CONSTANT from '../../../utils/constant';
+import FadeInFromBottom from '../../animation/content-animation/ContentAnimation';
 
 const techList = [
     TbBrandCSharp,
@@ -30,45 +32,42 @@ export default function HomeTechstack(){
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            console.log('width:', width);
             if (contentRef.current) {
-              setWidth(contentRef.current.offsetWidth);
+                setWidth(contentRef.current.offsetWidth);
             }
           }, 0); // hoặc delay vài ms nếu cần
-
         
           return () => clearTimeout(timeout);
     }, []);
 
-    const duration = width / 60; // 60px per second
+    const duration = width / (80 - 16); // 60px per second
 
     return(
-        <div>
-            <div className={clsx(styles['htt__wrapper'])}>
-                <div className="container">
-                    <TitleBasic title='Các công nghệ' color='blue' size='m' textAlign='center' />
+        <div className={clsx(styles['htt__container'])} id={CONSTANT.HEADER_ITEM.techstack.id}>
+            <FadeInFromBottom>
+                <div className={clsx(styles['htt__wrapper'])}>
+                    <div className="container">
+                        <TitleBasic title='Các công nghệ' color='blue' size='m' textAlign='center' />
+                    </div>
+                    <div className={clsx(styles['htt__techstack--container'])}>
+                        <motion.div
+                            ref={contentRef}
+                            className={clsx(styles['htt__techstack--wrapper'])}
+                            animate={{ x: [`0%`, `-${width}px`] }}
+                            transition={{ duration: duration, ease: 'linear', repeat: Infinity }}
+                        >
+                            {[...techList, ...techList, ...techList].map((Icon, index) => (
+                                <div className={clsx(styles['htt__techstack--item'])} key={index}>
+                                    <Icon
+                                        size={80}
+                                        color="#a9a9a9"
+                                    />
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
                 </div>
-                <div className={clsx(styles['htt__techstack--container'])}>
-                    <motion.div
-                        ref={contentRef}
-                        className={clsx(styles['htt__techstack--wrapper'])}
-                        animate={{ x: [`0%`, `-${width}px`] }}
-                        transition={{ duration: duration, ease: 'linear', repeat: Infinity }}
-                    >
-                        {[...techList, ...techList].map((Icon, index) => (
-                            // <span key={index} className={clsx(styles['htt__techstack--item'])}>
-                            //     {item}
-                            // </span>
-                            <Icon
-                                key={index}
-                                size={80}
-                                color="#a9a9a9"
-                                className={clsx(styles['htt__techstack--item'])}
-                            />
-                        ))}
-                    </motion.div>
-                </div>
-            </div>
+            </FadeInFromBottom>
         </div>
     )
 }

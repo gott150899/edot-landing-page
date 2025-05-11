@@ -1,5 +1,50 @@
 @use './variables' as *;
 
+@mixin responsive-between($min, $max) {
+    @media screen and (min-width: #{$min}) and (max-width: #{$max}) {
+      @content;
+    }
+}
+@mixin responsive-0-to-md{
+    @include responsive-between(0, $mdpb){
+        @content;
+    }
+}
+// responsive 480 -> max
+@mixin responsive-xs{
+    @media screen and (min-width: $xs) {
+        @content;
+    }
+}
+
+// responsive 576 -> max
+@mixin responsive-sm{
+    @media screen and (min-width: $sm) {
+        @content;
+    }
+}
+
+// responsive 768 -> max
+@mixin responsive-md{
+    @media screen and (min-width: $md) {
+        @content;
+    }
+}
+
+// responsive 992 -> max
+@mixin responsive-lg{
+    @media screen and (min-width: $lg) {
+        @content;
+    }
+}
+
+// responsive 1200 -> max
+@mixin responsive-xl{
+    @media screen and (min-width: $xl) {
+        @content;
+    }
+}
+
 @mixin transition-basic{
     transition: all 0.3s linear;
 }

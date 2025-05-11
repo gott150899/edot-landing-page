@@ -1,6 +1,6 @@
 .hpd{
     &__container{
-        margin-bottom: 56px;
+        padding-top: $header-height;
     }
     &__wrapper{
         display: flex;
@@ -17,9 +17,16 @@
     &__product{
         &--grid{
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
             > *:only-child {
                 grid-column: 2 / 3; // đặt phần tử con duy nhất vào cột giữa
+            }
+            @include responsive-sm{
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            @include responsive-lg{
+                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
         }
         &--item{

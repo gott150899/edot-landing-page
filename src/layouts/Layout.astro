@@ -1,6 +1,11 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import HeaderBasic from '../components/header/header-basic/HeaderBasic.tsx';
+import FooterBasic from '../components/footer/footer-basic/FooterBasic.tsx';
+import OverlayAnimation from '../components/animation/overlay-animation/OverlayAnimation.tsx';
 import '../assets/styles/global.scss';
+
+const { title = 'Trang chủ | EGO', description = 'Welcome to EGO', pageRender = 'home' } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,14 +15,23 @@ import '../assets/styles/global.scss';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<ClientRouter />
 	</head>
 	<body>
-		<slot />
+		<div data-astro-transition-persist="overlay">
+			<OverlayAnimation client:load />
+		</div>
+		<HeaderBasic pageRender={pageRender} client:load />
+		<main>
+			<slot />
+		</main>
+		<div data-astro-transition-persist="footer">
+			<FooterBasic />
+		</div>
 	</body>
 </html>
 

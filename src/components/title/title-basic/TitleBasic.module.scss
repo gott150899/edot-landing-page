@@ -21,7 +21,10 @@
 
             }
             &-m{
-                font-size: 40px;
+                font-size: 32px;
+                @include responsive-md{
+                    font-size: 40px;
+                }
             }
             &-l{
                 font-size: 55px;

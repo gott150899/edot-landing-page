@@ -1,8 +1,8 @@
 ---
+import OverlayAnimation from '../components/animation/overlay-animation/OverlayAnimation.tsx';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Counter from '../components/Counter.jsx';
-import HeaderBasic from '../components/header/header-basic/HeaderBasic.tsx';
 import HomeOverview from '../components/home/overview/HomeOverview.tsx';
 import HomeAbout from '../components/home/about/HomeAbout.tsx';
 import HomeProduct from '../components/home/product/HomeProduct.tsx';
@@ -12,10 +12,10 @@ import HomeTechstack from '../components/home/techstack/HomeTechstack.tsx';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+
 <Layout>
-    <HeaderBasic client:load />
     <HomeOverview />
-    <HomeAbout />
-    <HomeProduct />
+    <HomeAbout client:load />
+    <HomeProduct client:load  />
     <HomeTechstack client:load />
 </Layout>

@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import styles from './HomeOverview.module.scss';
 import TitleBasic from '../../title/title-basic/TitleBasic';
+import CONSTANT from '../../../utils/constant';
 
 export default function HomeOverview(){
     return(
@@ -8,7 +9,7 @@ export default function HomeOverview(){
             <div className="container">
                 <div className={clsx(styles.hov__wrapper)}>
                     <div className={clsx(styles['hov__content--wrapper'])}>
-                        <TitleBasic title='EDOT' color='orange' size='l' />
+                        <TitleBasic title={CONSTANT.INFO.companyName} color='orange' size='l' />
                         <div className={clsx(styles['hov__content--desc-wrapper'])}>
                             <span>Với phương châm</span>
                             <b className={clsx(styles['hov__content--text-spacing'])}>“Xây dựng Công ty vững mạnh, lấy con người làm trung tâm”.</b>

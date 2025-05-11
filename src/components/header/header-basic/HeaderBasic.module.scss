@@ -2,16 +2,22 @@
 .hbs{
     &__container{
         // height: $header-height;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        z-index: 1;
-        background-color: transparent;
-        @include transition-basic;
         
-        &.active{
-            background-color: #fff;
+        &.apply-for-home{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            background-color: transparent;
+            @include transition-basic;
+            
+            &.active{
+                background-color: #fff;
+                box-shadow: $box-shadow-basic;
+            }
+        }
+        &.apply-for-product{
             box-shadow: $box-shadow-basic;
         }
     }
@@ -24,12 +30,21 @@
     &__right{
         &--wrapper{
             display: flex;
-            column-gap: 20px;
+            gap: 20px;
+            @include responsive-0-to-md{
+                flex-direction: column;
+            }
+            @include responsive-md{
+                align-items: center;
+            }
         }
         &--item{
             position: relative;
             font-size: 18px;
             color: #000;
+            @include responsive-0-to-md{
+                width: fit-content;
+            }
 
             &.active{
                 color: $orange;
@@ -56,6 +71,60 @@
                     background-color: #000;
                 }
             }
+        }
+    }
+    &__btn-contact{
+        background-color: $orange-100;
+        border-radius: 100px;
+        padding: 8px 28px;
+        font-size: $font-size-base;
+        color: #fff;
+        @include transition-basic;
+        &:hover{
+            opacity: 0.8;
+        }
+        @include responsive-0-to-md{
+            width: fit-content;
+        }
+    }
+    &__btn-menu{
+        width: 40px;
+        height: 40px;
+        background-color: $blue;
+        border-radius: 999px;
+    }
+}
+
+.mem{
+    &__container{
+        position: fixed; /* Đặt menu cố định ở vị trí của màn hình */
+        top: 0;
+        left: 0;
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+        height: 100vh; /* Chiếm toàn bộ chiều cao của viewport */
+        background-color: #fff;
+        display: none; /* Menu ẩn mặc định */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1000; /* Đảm bảo menu hiển thị trên các phần tử khác */
+        
+        &.open{
+            display: block;
+        }
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    &__btn{
+        &--close{
+            margin-left: auto;
+        }
+    }
+    &__items{
+        &--container{
+            margin-top: 28px;
         }
     }
 }

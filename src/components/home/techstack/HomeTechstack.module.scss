@@ -1,4 +1,7 @@
 .htt{
+    &__container{
+        padding: $header-height 0;
+    }
     &__wrapper{
         display: flex;
         flex-direction: column;
@@ -15,6 +18,10 @@
         }
         &--item{
             flex: none;
+            width: 100px;
+            @include responsive-md{
+                width: 200px;
+            }
         }
     }
 }
